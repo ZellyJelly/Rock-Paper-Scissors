@@ -23,23 +23,24 @@ function play(){
 
 
 function getUserChoice(){
-  userChoice = (toLowercase(window.prompt("Rock, Paper or Scissors?")));
+  userChoice = window.prompt("Rock, Paper or Scissors?");
+  userChoice = toLowerCase(userChoice); //need to figure out how to parse this dpaowkdopaw
 }
 
 function getComputerChoice(){
 let i = generateRandomInteger(1, 3);
 
-  switch(i == true){
+  switch(i){
     case 1:
-      cpuChoice = Rock;
+      cpuChoice = "rock";
       break;
     case 2:
-      cpuChoice = Paper;
+      cpuChoice = "paper";
       break;
     case 3:
-      cpuChoice = Scissors;
+      cpuChoice = "scissors";
       break;
-    default: error;
+    default: alert("error");
   }
 }
 
