@@ -1,13 +1,13 @@
 let cpuChoice;
-let cpuScore;
+let cpuScore = 0;
 let userChoice;
-let userScore;
+let userScore = 0;
 
 function play(){
   getComputerChoice();
   getUserChoice();
   compare();
-
+ 
   if(userScore > cpuScore){
     alert("you win!");
   }
@@ -24,7 +24,7 @@ function play(){
 
 function getUserChoice(){
   userChoice = window.prompt("Rock, Paper or Scissors?");
-  userChoice = toLowerCase(userChoice); //need to figure out how to parse this dpaowkdopaw
+  userChoice = userChoice.toLowerCase()
 }
 
 function getComputerChoice(){
@@ -47,10 +47,10 @@ let i = generateRandomInteger(1, 3);
 function compare(){
   if(userChoice == "rock"){
   switch(cpuChoice){
-    case scissors:
+    case "scissors":
       userScore++;
       break;
-    case rock:
+    case "rock":
       break;
     default:
       cpuScore++;
@@ -60,10 +60,10 @@ function compare(){
 
   if(userChoice == "paper"){
     switch(cpuChoice){
-      case scissors:
+      case "scissors":
         cpuScore++;
         break;
-      case rock:
+      case "rock":
         playerScore++;
         break;
       default:
@@ -73,9 +73,9 @@ function compare(){
   
     if(userChoice == "scissors"){
       switch(cpuChoice){
-        case scissors:
+        case "scissors":
           break;
-        case rock:
+        case "rock":
           cpuScore++;
           break;
         default:
