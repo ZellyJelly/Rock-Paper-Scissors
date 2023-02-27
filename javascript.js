@@ -4,20 +4,26 @@ let userChoice;
 let userScore = 0;
 
 function play(){
-  getComputerChoice();
-  getUserChoice();
-  compare();
- 
-  if(userScore > cpuScore){
-    alert("you win!");
+  let i = 0;
+
+    while(i < 5){
+      getComputerChoice();
+      getUserChoice();
+      compare();
+
+      if(userScore > cpuScore){
+      alert("you win!");
+      i++;
+    }
+      else if(userScore == cpuScore){
+      alert("tie ;-;");
+      i++;
+    }
+      else if(userScore < cpuScore){
+      alert("you suck");
+      i++;
+    }
   }
-  else if(userScore == cpuScore){
-    alert("tie ;-;");
-  }
-  else if(userScore < cpuScore){
-    alert("you suck");
-  }
-  
 }
   
 
@@ -64,7 +70,7 @@ function compare(){
         cpuScore++;
         break;
       case "rock":
-        playerScore++;
+        userScore++;
         break;
       default:
         break;
