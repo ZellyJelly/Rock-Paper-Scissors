@@ -4,24 +4,24 @@ let userChoice;
 let userScore = 0;
 
 function play(){
-  let i = 0;
+  
 
-    while(i < 5){
+    for (let i = 0; i < 5; i++){
       getComputerChoice();
       getUserChoice();
       compare();
 
       if(userScore > cpuScore){
       alert("you win!");
-      i++;
+      
     }
       else if(userScore == cpuScore){
       alert("tie ;-;");
-      i++;
+      
     }
       else if(userScore < cpuScore){
       alert("you suck");
-      i++;
+      
     }
   }
 }
