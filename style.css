@@ -1,0 +1,22 @@
+.buttons
+{
+    display: flex;
+    margin: auto 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+button
+{
+    flex: auto;
+    max-width: 200px; margin: 5px auto;
+    padding:1rem 3rem;   
+
+    font-size: 20px;
+    border-radius: 10rem;
+    
+    border-color: rgb(65, 65, 65);
+    background-color: rgba(92, 89, 89, 0.644);
+}

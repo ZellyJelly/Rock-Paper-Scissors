@@ -1,36 +1,43 @@
-let cpuChoice;
+let cpuChoice;  
 let cpuScore = 0;
 let userChoice;
 let userScore = 0;
+let currenWinner = "null";
+
+
+
+const btnPlay = document.querySelector('#plays');
+btnPlay.addEventListener('click', () => {
+  play(); 
+});
 
 function play(){
-  
-
-    for (let i = 0; i < 5; i++){
       getComputerChoice();
-      getUserChoice();
-      compare();
-
-      if(userScore > cpuScore){
-      alert("you win!");
-      
-    }
-      else if(userScore == cpuScore){
-      alert("tie ;-;");
-      
-    }
-      else if(userScore < cpuScore){
-      alert("you suck");
-      
-    }
+      compare((getUserChoice), cpuChoice);
   }
-}
-  
 
 
 function getUserChoice(){
-  userChoice = window.prompt("Rock, Paper or Scissors?");
-  userChoice = userChoice.toLowerCase()
+  const btnRock = document.querySelector('#rock');
+  const btnPaper = document.querySelector('#paper');
+  
+  btnRock.addEventListener('click', () => 
+  {
+    userChoice = "rock";
+    return userChoice;
+  })
+  btnPaper.addEventListener('click', () => 
+  {
+    userChoice = "paper";
+    return userChoice;
+  })
+  btnScissors.addEventListener('click', () => 
+  {
+    userChoice = "Scissors";
+   return userChoice;
+  })
+
+
 }
 
 function getComputerChoice(){
@@ -50,8 +57,13 @@ let i = generateRandomInteger(1, 3);
   }
 }
 
-function compare(){
-  if(userChoice == "rock"){
+function compare(user){
+  if (!user == "rock" || "paper" || "scissors")
+  {
+    alert("ERROR COMPARE");
+  }
+
+  if(user == "rock"){
   switch(cpuChoice){
     case "scissors":
       userScore++;
@@ -64,7 +76,7 @@ function compare(){
    }
   }
 
-  if(userChoice == "paper"){
+  if(user == "paper"){
     switch(cpuChoice){
       case "scissors":
         cpuScore++;
@@ -77,7 +89,7 @@ function compare(){
      }
     }
   
-    if(userChoice == "scissors"){
+    if(user == "scissors"){
       switch(cpuChoice){
         case "scissors":
           break;
@@ -91,6 +103,14 @@ function compare(){
       }
 }
 
+function winner()
+{
+if (userScore > cpuScore)
+  {
+    currenWinner = "You Win";
+  }
+else {currentWinner = "You Loose"}
+}
 function generateRandomInteger(min, max) {
     return Math.floor(min + Math.random()*(max - min + 1))
   }
